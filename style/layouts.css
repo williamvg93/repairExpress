@@ -1,0 +1,717 @@
+@font-face {
+    font-family: 'kollektif';
+    src: url('font/kollektif/Kollektif.ttf');
+    font-style: normal;
+}
+
+:root {
+    --txtNavLink : clamp(1.2rem, 1.5vw, 2.3rem);
+    --docFont : 'kollektif';
+    --colorTxtBody : #000000;
+    --colorTxtLinks : #343434;
+    --txtParr : clamp(1rem, 1.2vw, 2rem);
+    --btnForms : #0050F5;
+    --bgNavRespo : #EDF2FB;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: var(--docFont);
+    color: var(--colorTxtBody);
+}
+
+body {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h2 {
+    font-size: var(--txtNavLink);
+    color: var(--colorTxtLinks);
+    font-weight: 400;
+}
+
+.inputGroup > label {
+    color: var(--colorTxtLinks);
+    font-weight: lighter;
+}
+
+.inputGroup > select::placeholder, .inputGroup > input::placeholder {
+    font-size: var(--txtParr);
+    padding-left: 30px;
+}
+
+
+.headerCont, .mainCont {
+    flex: 1 1 100vw;
+}
+
+.headerCont {
+    height: 17.5vh;
+}
+
+.mainCont {
+    height: calc(100vh - 9.3vw);
+}
+
+/* -------------------------------------------------- */
+/* ------------------ Nav Container ----------------- */
+/* -------------------------------------------------- */
+
+.navCont {
+    display: flex;
+    flex: 1 1 1;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    --state-close : scale(0);
+    --state-hamburger: scale(1);
+    --state-menu : translate(-100%);
+}
+
+.navCont:target {
+    --state-close : scale(1);
+    --state-hamburger : scale(0);
+    --state-menu : translate(0);
+}
+
+.logoMen {
+    flex: 1 1 12vh;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+}
+.logo {
+    flex: 1 1 12vh;
+    height: 70%;
+    width: 80%;
+}
+
+ul {
+    width: 100%;
+    height: 40vh;
+    background-color: #EDF2FB;
+    position: absolute;
+    top: 17%;
+    bottom: 0;
+    right: 4%;
+    left: 0;
+    display: grid;
+    row-gap: 2rem;
+    transform: var(--state-menu);
+    transition: 0.2s transform;
+}
+
+
+.navItem {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+}
+
+.navLink {
+    display: grid;
+    width: 100%;
+    height: 100%;
+}
+
+.navItem > .navLink {
+    font-size: var(--txtNavLink);
+    color: var(--colorTxtLinks);
+}
+
+.logo > .navAvatar {
+    width: 90%;
+    height: 95%;
+    object-fit: contain;
+}
+
+.navLogo {
+    width: 9vw;
+    height: 100%;
+    object-fit: cover;
+}
+
+.navHamIcon {
+    width: 5vh;
+    filter: invert(15%) sepia(31%) saturate(6792%) hue-rotate(204deg) brightness(96%) contrast(101%);
+}
+
+.navHambur,
+.navClose {
+    cursor: pointer;
+    grid-column: -2/-1;
+    grid-row: 1/2;
+    transition: .3s transform;
+}
+
+.navHambur {
+    transform: var(--state-hamburger);
+}
+
+.navClose {
+    transform: var(--state-close);
+}
+
+/* -------------------------------------------------- */
+/* ------------------ Form Reserva ------------------ */
+/* -------------------------------------------------- */
+
+.main { 
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 18vh 1fr;
+}
+
+.contForms {
+    width: 100%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 45vh), 1fr));
+    justify-items: center;
+    align-items: start;
+}
+
+.conTitImgRes {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.titImgRes {
+    display: grid;
+    justify-items: center;
+    row-gap: 1.5vh;
+}
+
+/* .titImgRes *{
+    border: 1px solid black;
+} */
+
+.titImgRes > h2 {
+    font-size: var(--txtNavLink);
+    font-weight: 700;
+}
+.titImgRes > p {
+    color: var(--colorTxtLinks);
+    font-size: 2vh;
+    font-weight: 200;
+    text-align: center;
+}
+
+.titImgRes > img {
+    width: 5vh;
+}
+
+.contProd1, .contProd2 {
+    display: grid;
+    width: 80%;
+    height: 80%;
+    grid-template-rows: 1fr 5fr 2fr 2fr;
+    row-gap: 1vh;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+}
+
+.contProd1 > *, .contProd2 > * {
+    width: 100%;
+    height: 60%;
+}
+
+
+.contProd1 > .inputGroup, .contProd2 > .inputGroup {
+    display: grid;
+    row-gap: 1vh;
+    text-align: left;
+    height: auto;
+}
+
+.contProd1 > .inputGroup > label, .contProd2 > .inputGroup > label {
+    margin-left: 5px;
+    font-size: var(--txtParr);
+}
+
+.contProd1 > .inputGroup > select, .contProd1 > .inputGroup > input,
+.contProd2 > .inputGroup > select, .contProd2 > .inputGroup > input {
+    height: 6vh;
+    border-radius: 30px;
+    border: 1px solid var(--colorTxtLinks);
+    font-size: var(--txtParr);
+}
+
+.contProd1 > .inputGroup > select, .contProd2 > .inputGroup > select {
+    padding-left: 30px;
+}
+
+.contProd1 > .contImgFormRes, .contProd2 > .contImgFormRes  {
+    width: 80%;
+    height: 100%;
+}
+.contProd1 > .contImgFormRes > img , .contProd2 > .contImgFormRes > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+input[type=date]:required:invalid::-webkit-datetime-edit {
+    color: transparent;
+    color: white;
+}
+input[type=date] { color: transparent !important; } 
+.active input[type=date] { color: inherit !important; }
+
+
+.contProduct3 {
+    width: 80%;
+    height: 80%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.contProduct3 .contBtn {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnForm {
+    padding: 2vh 5vh;
+    font-size: var(--txtNavLink);
+    border-radius: 30px;
+    background-color: var(--btnForms);
+    color: white;
+}
+
+
+/* -------------------------------------------------- */
+/* ------------------ Form Reserva ------------------ */
+/* -------------------------------------------------- */
+
+.contReserva { 
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 20vh 1fr;
+    row-gap: 4vh;
+}
+
+.contFormPago {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 45vh), 1fr));
+    justify-items: center;
+    align-items: start;
+    row-gap: 12vh;
+}
+
+.titImgRes > .imgPago {
+    width: 9vh;
+}
+
+.conTitImgRes > .titImgRes > h2 {
+    font-size: 4.4vh;
+    font-weight: 100;
+}
+
+.titImgRes > .parrPago {
+    width: 60%;
+    text-align: center;
+    font-size: 2vh;
+}
+
+
+.contRese1, .contRese2 , .contProd3 {
+    display: grid;
+    width: 90%;
+    height: 80%;
+/*     grid-template-rows: 11vh 13vh 13vh 12vh; */
+    grid-template-rows: repeat(auto-fit, minmax(min(100%, 10vh),2fr));
+    justify-items: center;
+    align-items: center;
+    row-gap: 2vh;
+}
+
+.contRese2 {
+    width: 70%;
+    height: 80%;
+    grid-template-rows: repeat(auto-fit, minmax(min(100%, 10vh),2fr));
+    /* grid-template-rows: 7vh 9vh 14vh 12vh; */
+   /*  grid-template-rows: repeat(auto-fit, minmax(min(100%, 11vh),1fr)); */
+    row-gap: 1vh;
+    justify-items: center;
+    align-items: center;
+}
+
+
+/* .contRese1, .contGruImp {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.contTitFormRes {
+    grid-column: 1/2;
+    grid-row: 1/2;
+} */
+
+.contFormPago > .contRese1 > *, .contFormPago > .contRese2 > *, .contFormPago > .contProd3 > *  {
+    width: 90%;
+    height: 90%;
+    text-align: center;
+}
+
+.contFormPago > .contRese1 > .contTitFormRes {
+    display: grid;
+    justify-items: center;
+}
+.contFormPago > .contRese1 > .contTitFormRes, p {
+    font-size: clamp(1rem, 2.3vh, 2rem);
+    font-weight: 100;
+    width: 90%;
+    color: var(--colorTxtLinks);
+}
+.contFormPago > .contRese1 > .contTitFormRes, h2 {
+    font-size: clamp(1.5rem, 3.3vh, 4rem);
+    color: var(--colorTxtBody);
+}
+
+.contFormPago > .contRese1 > .contGruImp {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr; */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 50px), 1fr));
+    column-gap: 2vh;
+
+}
+.contFormPago > .contRese1 > .contGruImpAre {
+    display: grid;
+    grid-template-columns: 0.7fr 1fr;
+    column-gap: 1vh;
+}
+
+.contFormPago > .contRese2 > .contGruImpCW {
+    display: grid;
+    grid-template-columns: 0.9fr 1.5fr;
+    /* grid-template-columns: repeat(auto-fit, minmax(min(100%, 0.5fr), 0.5fr)); */
+    column-gap: 3vh;
+}
+
+.contFormPago > .contRese1 > .inputGroup, .contFormPago > .contRese2 > .inputGroup {
+    width: 65%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 7vh), 1fr));
+    row-gap: 1vh;
+    text-align: left;
+}
+
+.contFormPago > .contRese2 > .inputGroup > .numTar {
+    height: 3vw;
+}
+
+.contFormPago > .contRese1 > .inputGroupEma {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    row-gap: 1vh;
+    text-align: left;
+}
+
+.contFormPago > .contRese1 > .inputGroupEma > * {
+    flex: 1 1 100%;
+}
+
+
+.contFormPago > .contRese2 > .inputGroup {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contFormPago > .contRese2 > .inputGroup > input {
+    width: 90%;
+}
+
+.contFormPago > .contRese2 > .contImgFormRes {
+    display: flex;
+    column-gap: 2vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.contFormPago > .contRese2 > .contImgFormRes > img {
+    color: white;
+    background-color: white;
+}
+
+.contFormPago > .contRese2 > .contImgFormRes > .imgMetro {
+    background-color: #0050F5;
+    padding: 0.5vh;
+    border-radius: 20px;
+}
+
+.contFormPago > .contRese1 > .contGruImp > .inputGroup, .contFormPago > .contRese2 > .contGruImpCW > .inputGroupCW, .contFormPago > .contRese2 > .contGruImpCW > .inputGroupFec {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    row-gap: 1vh;
+    text-align: left;
+}
+
+.contFormPago > .contRese2 > .contGruImpCW > .inputGroupFec > label {
+    font-size: clamp(1rem, 1.3vw, 1.3vw);
+}
+
+.contFormPago > .contRese1 > .contGruImp > .inputGroup > .condAre, .contFormPago > .contRese2 > .contGruImpCW > .inputGroupCW > .contCW  {
+    width: 100%;
+}
+
+.contFormPago > .contRese1 > .inputGroup > input, .contFormPago > .contRese2 > .inputGroup > input {
+    height: clamp(5vh, 5vw, 7vw);
+    border-radius: 30px;
+    letter-spacing: -1px;
+}
+
+
+.contFormPago > .contRese1 > .inputGroup > label {
+    text-align: left;
+    margin-left: 20px;
+    font-size: 2.2vh;
+    letter-spacing: -1px;
+}
+
+.contFormPago > .contRese1 > .contGruImp > .inputGroup > input {
+    height: clamp(5vw, 3.5vw, 4vw);
+    width: clamp(3vh, 100%, 100%);
+    border-radius: 30px;
+    letter-spacing: -1px;
+}
+
+.contFormPago > .contRese1 > .contGruImp > .inputGroup > label {
+    margin-left: 20px;
+    font-size: 2.2vh;
+    letter-spacing: -1.5px;
+}
+
+.contFormPago > .contRese1 > .inputGroup {
+    display: grid;
+    grid-template-rows: 0.5fr 1fr;
+}
+
+.contFormPago label {
+    text-align: left;
+    margin-left: 20px;
+    font-size: 2.5vh;
+    letter-spacing: -1px;
+}
+
+.contFormPago input {
+    border-radius: 30px;
+    height: clamp(2vw, 3.5vw, 4vw);
+    font-size: 2vh;
+    color: var(--colorTxtLinks);
+    padding-left: 2vh;
+}
+
+.contProd3 {
+    grid-template-rows: 7vh 13vh 12vh 7vh 13vh 8vh;
+    width: 80%;
+    height: auto;
+}
+
+.contFormPago > .contProd3 > * {
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: start;
+}
+
+.contFormPago > .contProd3 > * > * {
+    height: 100%;
+}
+
+.contFormPago > .contProd3 > .contDatOrden {
+    flex-direction: column;
+} 
+.contFormPago > .contProd3 > .contDatOrden > * {
+    text-align: left;
+    width: 100%;
+}
+
+.contFormPago > .contProd3 > .contSubTot {
+    justify-content: space-between;
+    align-content: center;
+} 
+.contFormPago > .contProd3 > .contSubTot > .contSubTotCol1, .contFormPago > .contProd3 > .contSubTot > .contSubTotCol2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} 
+.contFormPago > .contProd3 > .contTotal {
+    justify-content: space-between;
+    align-content: center;
+} 
+
+.contFormPago > .contProd3 > .contTotal > p {
+    text-align: left;
+    font-size: clamp(2.5vh, 2vw, 2.5vw);;
+    font-weight: bold;
+}
+
+.contFormPago > .contProd3 > .contTotal > :nth-child(2) {
+    text-align: right;
+}
+
+.contFormPago > .contProd3 > .contAdver {
+    display: grid;
+    justify-content: center;
+    align-content: end;
+}
+.contFormPago > .contProd3 > .contBut {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border: none;
+}
+
+.contFormPago > .contProd3 > .contBut > a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--btnForms);
+    color: white;
+    border-radius: 30px;
+    font-size: 3vh;
+}
+
+.contFormPago > .contProd3 > .contAdver > p {
+    font-size: 1.8vh;
+    font-weight: lighter;
+}
+
+.contFormPago > .contProd3  p {
+    height: 100%;
+    font-size: clamp(2.5vh, 2.5vh, 2.5vh);
+    letter-spacing: -1px;
+}
+
+
+/* -------------------------------------------------- */
+/* ----------------- Complete Styles ---------------- */
+/* -------------------------------------------------- */
+
+
+
+.contComplete {
+    width: 100%;
+    height: calc(100vh - 20vh);
+    display: grid;
+    grid-template-rows: 16vh 1fr 12vh;
+    row-gap: 5vh;
+    justify-items: center;
+}
+
+.contComplete > * {
+    display: grid;
+    justify-items: center;
+    width: 80%;
+}
+
+.contComplete > .conTitImgCom > .titImgCom {
+    width: 15vh;
+    height: 15vh;
+    display: grid;
+    grid-template-rows: 4fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.contComplete > .conTitImgCom > .titImgCom > img {
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+}
+
+.contComplete > .titImgCom {
+    width: 80%;
+    grid-template-rows: 23vh 0.8fr 0.8fr;
+    row-gap: 5vh;
+    align-items: center;
+}
+
+.contComplete > .titImgCom > .contImgCheck {
+    width: 25vh;
+    height: 100%;
+    
+}
+
+.contComplete > .titImgCom > .contImgCheck > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.contComplete > .titImgCom > .parrPago {
+    width: 60%;
+    font-size: var(--txtNavLink);
+    text-align: center;
+}
+
+
+.contComplete > .contBtnCom {
+    align-items: center;
+}
+
+.contComplete > .contBtnCom > a {
+    background-color: var(--btnForms);
+    padding: 2.5vh 5.5vh;
+    border-radius: 30px;
+    color: white;
+    font-size: clamp(1rem, 1.7vw, 2vw);
+}
+
+
+
+@media (min-width:800px) {
+    .navCont {
+        --state-hamburger: scale(0);
+        --state-menu : translate(0);
+    }
+    
+    .navCont:target {
+        --state-close : scale(0);
+    }
+
+    ul {
+        background-color: unset;
+        position: unset;
+        flex: 1 1 auto;
+        display: flex;
+        flex-wrap: wrap;
+        width: 70%;
+        height: 90%;
+        justify-content: space-evenly;
+        align-items: center;
+        border-bottom: 1px solid slategray;
+        transform: var(--state-menu);
+        transition: 0.2s transform;
+    }
+    
+    .navLink {
+        font-size: 1.3rem;
+    }
+}

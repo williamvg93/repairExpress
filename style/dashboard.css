@@ -1,0 +1,417 @@
+@font-face {
+    font-family: 'kollektif';
+    src: url('font/kollektif/Kollektif.ttf');
+    font-style: normal;
+}
+
+:root {
+    --txtNavLink : clamp(1.2rem, 2vw, 3rem);
+    --docFont : 'kollektif';
+    --colorTxtBody : #000000;
+    --colorTxtLinks : #343434;
+    --txtParr : clamp(1rem, 1.2vw, 2rem);
+    --btnForms : #0050F5;
+    --bgNavRespo : #EDF2FB;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: var(--docFont);
+    color: var(--colorTxtBody);
+}
+
+body {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h2 {
+    font-size: var(--txtNavLink);
+    color: var(--colorTxtLinks);
+    font-weight: 400;
+    line-height: -1px;
+}
+
+p {    
+    font-size: var(--txtParr);
+    color: var(--colorTxtLinks);
+    font-weight: 400;
+    line-height: -1px;
+    text-align: center;
+}
+
+.labelParr {
+    font-size: clamp(0.8rem, 0.8vh, 2rem);
+    color: var(--colorTxtLinks);
+    font-weight: 400;
+    line-height: -1px;
+    text-align: center;
+}
+
+.btnSubmit {
+    background-color: var(--btnForms);
+    color: white;
+    font-size: var(--txtNavLink);
+    padding: 2vh 6vh;
+    border-radius: 30px;
+}
+
+.headerCont, .mainCont {
+    flex: 1 1 100vw;
+}
+
+.headerCont {
+    height: 17.5vh;
+}
+
+.mainCont {
+    height: 100%;
+}
+
+/* -------------------------------------------------- */
+/* ------------------ Nav Container ----------------- */
+/* -------------------------------------------------- */
+
+.navCont {
+    display: flex;
+    flex: 1 1 1;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    --state-close : scale(0);
+    --state-hamburger: scale(1);
+    --state-menu : translate(-100%);
+}
+
+.navCont:target {
+    --state-close : scale(1);
+    --state-hamburger : scale(0);
+    --state-menu : translate(0);
+}
+
+
+.logoMen {
+    flex: 1 1 12vh;
+    display: grid;
+    justify-items: start;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.logo {
+    flex: 1 1 12vh;
+    height: 70%;
+    width: 80%;
+    padding-right: 20px;
+}
+
+.logo > a {
+    display: grid;
+    justify-items: end;
+    align-items: center;
+}
+
+ul {
+    width: 100%;
+    height: 35vh;
+    background-color: #EDF2FB;
+    position: absolute;
+    top: 17%;
+    bottom: 0;
+    right: 4%;
+    left: 0;
+    display: grid;
+    grid-template-rows: 0.5fr 0.01fr 0.5fr;
+    row-gap: 0.5rem;
+    transform: var(--state-menu);
+    transition: 0.2s transform;
+}
+
+
+.navItem {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+}
+
+.navLink {
+    display: grid;
+    width: 100%;
+    height: 100%;
+}
+
+.navItem > .navLink {
+    font-size: var(--txtNavLink);
+    color: var(--colorTxtLinks);
+}
+
+.logo > .navAvatar {
+    width: 100%;
+    height: 95%;
+    object-fit: contain;
+}
+
+.navLogo, .navLogoExter {
+    width: 15vh;
+    height: 100%;
+    object-fit: contain;
+}
+
+.navHamIcon {
+    width: 5vh;
+    filter: invert(15%) sepia(31%) saturate(6792%) hue-rotate(204deg) brightness(96%) contrast(101%);
+}
+
+.navHambur,
+.navClose {
+    cursor: pointer;
+    grid-column: -2/-1;
+    grid-row: 1/2;
+    transition: .3s transform;
+}
+
+.navHambur {
+    transform: var(--state-hamburger);
+}
+
+.navClose {
+    transform: var(--state-close);
+}
+
+.navLogo {
+    display: none;
+}
+
+
+/* -------------------------------------------------- */
+/* ------------------ Main Container ---------------- */
+/* -------------------------------------------------- */
+
+
+
+/* -------------------------------------------------- */
+/* ------------------ User Container ---------------- */
+/* -------------------------------------------------- */
+
+.contDash { 
+    width: 98%;
+    height: 70vh;
+    display: grid;
+    grid-template-rows: 23vh 1fr 4vh;
+    row-gap: 2vh;
+    justify-items: center;
+}
+
+.contDash > .contUserInfo {
+    width: 70%;
+    display: grid;
+    grid-template-rows: 2fr 0.5 0.5;
+    row-gap: 2vh;
+    justify-items: center;
+}
+
+.contDash > .contUserInfo > .contAvatar {
+    width: 12vh;
+}
+
+.contDash > .contUserInfo > .contAvatar > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* -------------------------------------------------- */
+/* ------------------ Cards Container --------------- */
+/* -------------------------------------------------- */
+
+
+.contDash > .cardsCont {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(min(100%, 500px), 1fr));
+    gap: 2vh;
+    justify-items: center;
+}
+
+.contDash > .cardsCont > .contPerData, .contDash > .cardsCont > .contFacInfor, .contDash > .cardsCont > .contActSer {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.contDash > .cardsCont > .contPerData, .contDash > .cardsCont > .contFacInfor {
+    width: 90%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(min(100%, 2vh), 9vh));
+    row-gap: 3vh;
+}
+
+.contDash > .cardsCont > .contPerData > .contImgPerData, .contDash > .cardsCont > .contFacInfor > .contImgPerData {
+    grid-row: span 3;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.contDash > .cardsCont > .contPerData > .contImgPerData > img, .contDash > .cardsCont > .contFacInfor > .contImgPerData > img {
+    width: 32vh;
+    height: 22vh;
+    object-fit: contain;
+}
+
+.contDash > .cardsCont > .contPerData > .contInfPerData, .contDash > .cardsCont > .contFacInfor > .contInfPerData  {
+    width: 90%;
+}
+
+.contDash > .cardsCont > .contPerData > .contBtnCom > a {
+    background-color: var(--btnForms);
+}
+
+
+
+.contDash > .cardsCont > .contActSer {
+    width: 90%;
+    grid-template-rows: repeat(auto-fit, minmax(min(100%, 2vh), 8vh));
+    row-gap: 2vh;
+    position: relative;
+}
+
+.contDash > .cardsCont > .contActSer > .contImgActSer {
+    display: grid;
+    justify-content: center;
+    align-content: start;
+    grid-row: span 4;
+    width: 100%;
+    height: 100%;
+}
+
+.contDash > .cardsCont > .contActSer > .contImgActSer > img {
+    width: 31vh;
+    height: 25vh;
+    object-fit: contain;
+}
+
+.contDash > .cardsCont > .contActSer > .contImgActSer > .infImgPago {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.contDash > .cardsCont > .contActSer > .contEquiActSer > img {
+    width: clamp(1rem, 1.5vw, 1.5vw);
+}
+
+.contDash > .cardsCont > .contActSer > .contEquiActSer {
+    display: grid;
+    grid-template-columns: 0.3fr 2fr;
+}
+
+.contDash > .cardsCont > .contActSer > .contInfTec {
+    display: grid;
+    grid-row: span 2;
+    grid-template-rows: 2fr 0.3fr;
+}
+
+.contDash > .cardsCont > .contActSer > .contInfTec > .contInfTecInf > * {
+    text-align: left;
+}
+
+.contDash > .cardsCont > .contActSer > .contInfTec > .contInfTecImg {
+    display: grid;
+    grid-template-columns: 1fr 0.3fr 0.3fr 1fr;
+    justify-content: center;
+}
+
+.contDash > .cardsCont > .contActSer > .contInfTec > .contInfTecImg > .imgWhat {
+    grid-column: 2/3;
+}
+.contDash > .cardsCont > .contActSer > .contInfTec > .contInfTecImg > .imgPho {
+    grid-column: 3/4;
+}
+
+.contDash > .cardsCont > .contActSer > .contImgActSer > .infImgPago > .btnDanger {
+    background-color: red;
+    color: white;
+    border-radius: 30px;
+}
+
+
+.contDash > .cardsCont > .contActSer > .contBtnCom {
+    display: grid;
+    width: 100%;
+    justify-content: end;
+    align-content: end;
+    position: absolute;
+    bottom: -10%;
+}
+
+.contDash > .cardsCont > .contActSer > .contBtnCom > .btnClo {
+    height: 1.5vh;
+    font-size: 1.5vh;
+}
+
+
+.contInfTec > .contInfTecImg > img {
+    width: 20px;
+}
+
+
+/* ------------------------------------------------------------- */
+/* -------- Query para desactivar El Menú Hamburguesa ---------- */
+/* ------------------------------------------------------------- */
+
+
+@media (min-width:800px) {
+
+    .navLogoExter {
+        visibility: hidden;
+    }
+
+    .navLogo {
+        display: block;
+    }
+
+    .navCont {
+        --state-hamburger: scale(0);
+        --state-menu : translate(0);
+    }
+    
+    .navCont:target {
+        --state-close : scale(0);
+    }
+
+    ul {
+        background-color: unset;
+        position: unset;
+        flex: 1 1 auto;
+        display: flex;
+        flex-wrap: wrap;
+        width: 70%;
+        height: 90%;
+        justify-content: space-evenly;
+        align-items: center;
+        border-bottom: 1px solid slategray;
+        transform: var(--state-menu);
+        transition: 0.2s transform;
+    }
+    
+    .navLink {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width:800px) {
+
+}

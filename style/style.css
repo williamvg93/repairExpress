@@ -1,0 +1,350 @@
+@font-face {
+    font-family: "kollektif";
+    src: url("font/kollektif/Kollektif.ttf");
+    font-style: normal;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "kollektif";
+}
+html{
+    font-size: 16px;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    
+}
+.container-main{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;    
+}
+
+.home{
+    background-image: url("../img/iPhoneTransparente.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: clamp(1.3rem,1.5rem,1.7rem);
+    margin-left: clamp(1.7rem,2rem,2.3rem);
+    margin-bottom: clamp(10vw,15vw,17vw);
+}
+
+.languaje{
+    width: clamp(2.8vw,3vw,3.2vw);
+    height: auto;
+    display: grid;
+    align-self: end;
+    justify-self: center;
+}
+.languaje img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 100%;
+}
+.logo{
+    width: clamp(18vw,20vw,22vw);
+    height: auto;
+}
+.image2{
+    width: 100%;
+    height: 100%;
+}
+.logo img,.image2 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.informacion{
+    width: 40%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+}
+.informacion h2{
+    font-weight: bold;
+    font-size: clamp(1vw,2.5vw,2.5vw)
+}
+.informacion h3{
+    font-weight: lighter;
+    font-size: clamp(1vw,2.2vw,2.5vw);
+    margin-top: clamp(1rem,2rem,2.5rem);
+}
+.opciones{
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    top: clamp(5vw,7vw,7vw);
+    gap: 3vw;
+}
+
+.label-modal{
+    width: clamp(2rem,10vw,15vw);
+    height: auto;
+    padding: clamp(0.8vw,1vw,1.2vw);
+    background-color: #0050f5;
+    font-size: clamp(1.3vw,1.5vw,1.7vw);
+    color: #fff;
+    border-radius: clamp(1.3rem,1.5rem,1.7rem);
+    text-align: center;
+    text-decoration: none;
+}
+.label-modal{
+    cursor: pointer;
+}
+.label-modal a{
+    color: #fff;
+    text-decoration: none;
+}
+.label-modal:hover{
+    background-color: black;
+}
+#btn_modal{
+    display: none;
+}
+.image1{
+    width: 30%;
+    display: grid;
+    place-items: center;
+    position: relative;
+    bottom: clamp(3.5vw,4vw,5vw);
+}
+.image1 img{
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+}
+.page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(2.5vw,3vw,4vw);
+    margin-bottom: clamp(18vw,20vw,22vw);
+}
+.page h2{
+    font-weight: bold;
+    font-size: clamp(1.5vw,2.5vw,2.8vw)
+}
+.page h3{
+    font-weight: lighter;
+    font-size: clamp(1vw,2.1vw,2.3vw);
+}
+.proceso{
+    display: grid;
+    grid-template-columns:  repeat(auto-fit,minmax(min(100%,19rem),1fr));;
+    gap: 2rem;
+    place-content: center;
+    
+}
+.proceso div{
+    width: clamp(50%,75%,100%);
+    height: auto;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    place-self: center;
+    gap: 1.5rem;
+}
+.proceso div img{
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+}
+.proceso div h2{
+    font-weight: bold;
+    font-size: clamp(1vw,2.3vw,2.5vw)
+}
+.proceso div p{
+    font-weight: lighter;
+    font-size: clamp(1vw,1.5vw,2.3vw);
+}
+.page a{
+    width: clamp(5rem,14vw,16vw);
+    height: auto;
+    background-color: #0050f5;
+    padding: 1rem;
+    border-radius: 5rem;
+    font-size: clamp(1.5vw,1.8vw,2vw);
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 2rem;
+}
+.personal_profesional{
+    display: grid;
+    place-items: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+.personal_profesional h2{
+    font-weight: bold;
+    font-size: clamp(1vw,2.3vw,2.5vw)
+
+}
+.personal_profesional h3{
+    font-weight: lighter;
+    font-size: clamp(1vw,2.1vw,2.3vw);
+    text-align: center;
+}
+.personal_profesional img{
+    width: 100vw;
+    height: auto;
+    object-fit: cover;
+}
+.precios_competitivos{
+    width: 90vw;
+    height: auto;
+    display: grid;
+    place-self: center;
+    gap: 3rem;
+    margin-bottom: clamp(18vw,10vw,10vw);    
+}
+.precios_competitivos h2{
+    font-weight: bold;
+    font-size: clamp(1vw,2.3vw,2.5vw);
+    text-align: center;
+}
+.precios_competitivos h3{
+    font-weight: lighter;
+    font-size: clamp(1vw,2.1vw,2.3vw);
+    text-align: center;
+}
+.precios_competitivos p{
+    font-weight: lighter;
+    font-size: clamp(1.5vw,1.8vw,2vw);
+    text-align: center;
+}
+.items{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(min(100%,25rem),1fr));
+    place-items: center;
+}
+.items div{
+    display: grid;
+    place-items: center;
+    gap: 2rem;
+}
+.items div h2{
+    font-weight: bold;
+    font-size: clamp(1vw,2.3vw,2.5vw);
+}
+.items div h3{
+    font-weight: lighter;
+    font-size: clamp(1vw,2.1vw,2.3vw);
+}
+.items div img{
+    display: grid;
+    width: 60%;
+    height: auto;
+    object-fit: cover;
+}
+.dispositivos{
+    width: 90vw;
+    height: auto;
+    display: grid;
+    place-self: center;
+    gap: 2rem;
+    margin-bottom: clamp(18vw,10vw,10vw);    
+
+}
+.dispositivos h2{
+    font-weight: bold;
+    font-size: clamp(1vw,2.3vw,2.5vw);
+    text-align: center;
+}
+.dispositivos h3{
+    font-weight: lighter;
+    font-size: clamp(1vw,2.1vw,2.3vw);
+    text-align: center;
+}
+.dispositivos p{
+    font-weight: lighter;
+    font-size: clamp(1.5vw,1.8vw,2vw);
+    text-align: center;
+}
+.marcas{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(min(100%,25rem),1fr));;
+    place-items: center;
+}
+.marcas div{
+    display: grid;
+    place-items: center;
+    gap: 1rem;
+}
+.marcas div img{
+    display: grid;
+    width: 80%;
+    height: auto;
+    object-fit: cover;
+}
+.orgullo_colombiano{
+    width: 100vw;
+    height: clamp(50vh,100vh,100vh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/Campesinos.png) ;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    flex-direction: column;
+}
+.orgullo_colombiano h2{
+    font-size: clamp(3vw,4vw,4.2vw);
+    margin-bottom: 8vw;
+}
+.item{
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(min(100%,10rem),1fr));
+    place-content: center;
+    place-items: center;
+    gap: 5rem;
+}
+.orgullo_colombiano p{
+    width: 60%;
+    font-size: clamp(1.5vw,1.8vw,2vw);
+    margin-top: 10vw;
+}
+.item img{
+    width: 80%;
+    height: auto;
+    object-fit: cover;
+}
+.container-footer{
+    width: 100%;
+    height: 10rem;
+    background-color: #0050f5;
+    display: flex;
+    justify-content: center;
+}
+.lista_desordenada{
+    width: 75%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.lista_desordenada{
+    list-style: none;
+}
+.lista_desordenada li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: clamp(1.2vw,1.5vw,2vw);
+}
+@media screen and (max-width:500px) {
+    .item-main {
+        width: 85%;   
+    }
+}

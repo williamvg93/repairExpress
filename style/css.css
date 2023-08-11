@@ -1,0 +1,113 @@
+@font-face {
+    font-family: "kollektif";
+    src: url("../fonts/Kollektif.ttf");
+    font-style: normal;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "kollektif";
+}
+html, body, main {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Kollektif';
+}
+.boton_modal {
+    background: rgb(5,80,255);
+    display: inline-block;
+}
+.boton_modal label:hover {
+    background: rgb(0, 0, 255);
+}
+
+#btn_modal {
+    display: none;
+}
+.container_modal {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;left: 0;
+    background: rgba(46, 47, 48, 0.8); /* Fondo cuando esta modal */ 
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+#btn_modal:checked ~ .container_modal{
+    display: flex;
+}
+.content-modal {
+    width: clamp(30%,35%,40%);
+    height: clamp(75%,80%,85%);
+    padding: 10px;
+    background: #fff;
+    border-radius: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 0%;
+    place-content: start;
+}
+
+.btn_cerrar{
+    display: grid;
+    grid-column: span 1;
+    justify-content: end;
+    margin-top: 2rem;
+}
+.btn_cerrar label{
+    cursor: pointer;
+}
+
+.btn-descargar,.btn-volver {
+    color: #000;
+    font-family: 'Teko', sans-serif;
+    font-size: 25px;
+    width: 100%;
+    position: relative;
+}
+#btn-descargar {
+    display: inline-block;
+    position: relative;
+    bottom: 100px;
+    background: #0370FC;
+    color: #fff;
+    left: 150px;
+    width: 120px;
+    height: 40px;
+    text-align: center;
+}
+#btn-volver {
+    display: inline-block;
+    position: relative;
+    left: 280px;
+    bottom: 140px;    
+    background: #fff;
+    color: #000;
+    width: 120px;
+    height: 40px;
+    text-align: center;
+}
+#btn-descargar:hover {
+    background: #5E8BD6;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+#btn-volver:hover {
+    background: #5E8BD6;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+.cerrar-modal {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;left: 0;
+    z-index: -1;
+}
+@media screen and (max-width:500px) {
+    .content-modal {
+        width: 85%;   
+    }
+}
